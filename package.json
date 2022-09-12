@@ -1,0 +1,11 @@
+{
+  "name": "taller_practico_matematicas_js",
+  "version": "1.0.0",
+  "description": "Proyeto práctio de mate en JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christian Gómez",
+  "license": "MIT"
+}
