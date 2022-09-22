@@ -66,6 +66,16 @@
   padding-left: 10px;
 }
 
+.description .cupones {
+  text-align: center;
+}
+
+.cupones input[type=radio] {
+  width: 15px;
+  height: 14px;
+  cursor: pointer;
+}
+
 .description .calc {
   width: 150px;
   height: 30px;

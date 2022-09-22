@@ -93,22 +93,61 @@ const button = document.querySelector('.calc');
 const result = document.querySelector('.result');
 
 const price = document.querySelector('#price');
-const discount = document.querySelector('#discount');
+const cupon1 = document.querySelector('#cupon1');
+const cupon2 = document.querySelector('#cupon2');
+const cupon3 = document.querySelector('#cupon3');
+
+let selectedCupon;
 
 button.addEventListener('click', calcPorcentaje);
 
 function calcPorcentaje() {
-    if(price.value == '' || discount.value == ''){
-        alert('Favor rellenar los campos');
+    let discount = isChecked();
+
+    if(price.value == '' || discount == '') {
+        alert('Favor ingrese un precio o seleccione un descuento');
     }
 
-    let res = ((Number(price.value) * (100 - Number(discount.value)) / 100)).toFixed(2);
+
+    // if (Number(discount.value) > 100){
+    //     alert('El descuento no puede ser mayor al 100% corrije el número');
+    // }
+
+    let res = ((Number(price.value) * (100 - Number(discount)) / 100)).toFixed(2);
     
     if(res > 0){
-        result.innerText = `El precio final del producto es: $${res} con un descuento aplicado del ${discount.value}%`;
-    
+        result.innerText = `El precio final del producto es: $${res} con un descuento aplicado del ${discount}%`;
+        
         price.value = '';
-        discount.value = '';
+        disableChecked();
         res = 0;
+    }
+}
+
+function isChecked() {
+    if(cupon1.checked) {
+        selectedCupon = 1;
+        return Number(cupon1.value);
+    } else if(cupon2.checked) {
+        selectedCupon = 2;
+        return Number(cupon2.value);
+    } else if(cupon3.checked) {
+        selectedCupon = 3;
+        return Number(cupon3.value);
+    } else {
+        return ' ';
+    }
+}
+
+function disableChecked() {
+    if(selectedCupon==1) {
+        selectedCupon = 0;
+        return cupon1.checked = false;
+    } else if(selectedCupon==2) {
+        selectedCupon = 0;
+        return cupon2.checked = false;
+    } else if(selectedCupon==3) {
+        selectedCupon = 0;
+        return cupon3.checked = false;
     }
 }
