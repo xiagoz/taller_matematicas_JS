@@ -4,13 +4,46 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
 <title>Taller de Matemáticas con JavaScript</title>
 </head>
 <body>
 <h1>Taller de Matemáticas con JavaScript</h1>
+<br>
 <p>
 Por favor, abre la consola del inspector de elementos
 </p>
-<script src="../js/math.js></script>
+<br>
+<br>
+
+<h2 class="module2">Porcentajes</h2>
+<br>
+<div class="product-card">
+  <div class="details">
+    <img src="https://images.pexels.com/photos/165971/pexels-photo-165971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="guitar">
+    <div class="description">
+      <h3>Gibson SG Guitar</h3><br>
+      <label for="price">Favor escribe el precio del producto</label><br><br>
+      <input required id="price" type="number" placeholder="Ingrese el precio"><br><br>
+      <b><legend for="cupones">Cupones de descuento</legend></b><br>
+
+      <div class="cupones">
+        <input id="cupon1" name="cupon" type="radio" value="60"> Black Friday del 60%
+        <br><br>
+  
+        <input id="cupon2" name="cupon" type="radio" value="30"> Cupon por aniversario 30%
+        <br><br>
+  
+        <input id="cupon3" name="cupon" type="radio" value="50"> Cupon navideño del 50%
+        <br><br>
+      </div>
+
+      <button class="calc"><b>Calcular</b></button><br><br>
+      <p class="result"><b></b></p>
+    </div>
+  </div>
+</div>
+<script src="../js/math.js"></script>
 </body>
 </html>
