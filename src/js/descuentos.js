@@ -8,9 +8,9 @@ btn.addEventListener("click", calcularPrecioConDescuento);
 // const arrayUObjecto = undefined; // ['cupones': descuento] {}?
 
 const couponObj = {
-  'navidad': 50,
-  'black friday': 70,
-  'aniversario': 30,
+  navidad: 50,
+  "black friday": 70,
+  aniversario: 30,
 };
 
 function calcularPrecioConDescuento() {
@@ -24,7 +24,7 @@ function calcularPrecioConDescuento() {
 
   let discount;
 
-  if (couponObj[]) {
+  if (couponObj[3]) {
     //
   } else {
     //
