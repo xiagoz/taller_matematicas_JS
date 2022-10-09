@@ -7,28 +7,75 @@ btn.addEventListener("click", calcularPrecioConDescuento);
 
 // const arrayUObjecto = undefined; // ['cupones': descuento] {}?
 
-const couponObj = {
-  navidad: 50,
-  "black friday": 70,
-  aniversario: 30,
-};
+// Con Objetos
+// const couponObj = {
+//   "navidad": 50,
+//   "black friday": 70,
+//   "aniversario": 30,
+// };
+
+// Con arrays
+const couponList = [];
+// Como en la función preguntamos es por el nombre del cupon
+// entonces trabajamos agregando objetos al array, para obtener ese valor
+couponList.push({
+  name: 'navidad',
+  discount: 50
+});
+couponList.push({
+  name: 'black friday',
+  discount: 70
+});
+couponList.push({
+  name: 'aniversario',
+  discount: 30
+});
 
 function calcularPrecioConDescuento() {
   const price = Number(inputPrice.value);
   const coupon = inputCoupon.value;
+  let discount;
 
   if (!price || !coupon) {
     pResult.innerText = "Favor llena el formulario";
     return;
   }
-
-  let discount;
-
-  if (couponObj[3]) {
-    //
-  } else {
-    //
+  function isAValidCoupon(couponElement) { // {name, discount}
+    return couponElement.name == coupon;
   }
+
+  // const couponInArray = couponList.filter(isAValidCoupon); // devuelve un array: [{}]
+  const couponInArray = couponList.find(isAValidCoupon); // devuelve un objeto: {}
+
+  //Lógica del copun con array / Método FILTER
+
+  // if (couponInArray.length > 0) {
+  //   discount = couponInArray[0].discount;
+  // } else {
+  //   pResult.innerText = 'El cupon ingresado no es valido';
+  // }
+
+  //Lógica del copun con un objeto / Método FIND
+
+  if (couponInArray) {
+    discount = couponInArray.discount;
+  } else {
+    pResult.innerText = 'El cupon ingresado no es valido';
+  }
+
+  console.log({
+    coupon,
+    discount,
+    couponInArray,
+    couponList,
+  });
+
+  // if (couponObj[coupon]) { //busca por el nombre del cupopn
+  //   discount = couponObj[coupon];
+  // } else {
+  //   pResult.innerText = 'El cupon ingresado no es valido';
+  //   return;
+  // }
 
   // switch (coupon) {
   //   case "JuanDC_es_Batman":
